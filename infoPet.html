@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Pet - Au&Miau</title>
+    <link rel="stylesheet" href="./infoPet.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/logo.png" alt="Logo Au&Miau"> <!-- Substitua 'logo.png' pela URL da sua imagem -->
+        </div>
+        <div class="company-name">Au&Miau</div>
+        <div class="reserve-button">
+            <a href="./index.html" style="text-decoration: none; color: white;">
+            <button>Reserve Seu Agendamento</button>
+            </a>
+        </div>
+    </header>
+    <main>
+        <h1>Cadastro de Pet</h1>
+        <div class="selection-container">
+            <div class="pet-selection">
+                <label class="pet-option">
+                    <input type="checkbox" id="cachorro" name="pet-type" value="cachorro">
+                    <div class="pet-box">
+                        <img src="./img/cachorrinho.png" alt="Cachorro"> <!-- Substitua 'cachorro-icon.png' pela URL do ícone -->
+                        <span>Cachorro</span>
+                    </div>
+                </label>
+                <label class="pet-option">
+                    <input type="checkbox" id="gato" name="pet-type" value="gato">
+                    <div class="pet-box">
+                        <img src="./img/gatinho.png" alt="Gato"> <!-- Substitua 'gato-icon.png' pela URL do ícone -->
+                        <span>Gato</span>
+                    </div>
+                </label>
+            </div>
+            <form class="pet-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="breed">Raça:</label>
+                        <input type="text" id="breed" name="breed" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="size">Porte:</label>
+                        <select id="size" name="size" required>
+                            <option value="P">Pequeno</option>
+                            <option value="M">Médio</option>
+                            <option value="G">Grande</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Sexo:</label>
+                        <select id="gender" name="gender" required>
+                            <option value="macho">Macho</option>
+                            <option value="femea">Fêmea</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="temperament">Temperamento:</label>
+                        <select id="temperament" name="temperament" required>
+                            <option value="hiperativo">Hiperativo</option>
+                            <option value="docil">Dócil</option>
+                            <option value="agressivo">Agressivo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="birthdate">Data de Nascimento:</label>
+                        <input type="date" id="birthdate" name="birthdate" required>
+                    </div>
+                </div>
+
+                <label for="observations">Observações:</label>
+                <textarea id="observations" name="observations" rows="4" cols="50"></textarea>
+            </form>
+        </div>
+        <div class="form-actions">
+            <button class="action-button back-button"><a href="./cadastroPet.html" style="text-decoration: none; color: white;">Voltar</a></button>
+            <button class="action-button continue-button"><a href="./servico.html" style="text-decoration: none; color: white;">Continuar</a></button>
+        </div>
+    </main>
+</body>
+</html>
