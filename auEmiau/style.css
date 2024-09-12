@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'poppinsR';
+    src: url(./fonts/Poppins-Regular.otf);
+}
+@font-face {
+    font-family: 'poppinsB';
+    src: url(./fonts/Poppins-Bold.otf);
+}
+
+body{
+    overflow-y: hidden;
+    font-family: 'poppinsR','Courier New', Courier, monospace;
+}
+
+main{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    justify-content: center;
+    margin: 0 10px 0 10px;
+}
+.centraliza {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+header{
+    background-color: #fff;
+}
+.header button {
+    background-color: #006D5B;
+    padding: 10px;
+    border-radius:50px;
+}
+.header button a{
+    text-decoration: none;
+    color: white;
+}
+
+hr{
+    margin: 10px 20px 7px 20px;
+}
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #F0F5F1;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid #006D5B;
+    border-radius:50px;
+}
+article{
+    background-color: #006D5B;
+    padding: 30px;
+    border-radius: 50px;
+    color: white;
+}
+article > h2{
+    margin-bottom: 40px;
+}
+.botao{
+    border-radius:50px;
+    background-color: white;
+    color: white;
+    color: #006D5B;
+}
+.imgCentral{
+    border-radius: 40px;
+    border: 3px solid #006D5B;
+}
+.menu-item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 20px;
+}
+.menu-item p {
+    margin: 0;
+    font-size: 18px;
+    color: #006d5b;
+}
+.header {
+    color: #006d5b;
+    padding: 10px 10px 0 10px;
+}
+.logoNome {
+    font-size: 20px;
+    font-family: 'poppinsB';
+}
+.header img {
+    height: 70px;
+}
+
