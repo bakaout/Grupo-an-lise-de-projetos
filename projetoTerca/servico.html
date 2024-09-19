@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleção de Serviço - Au&Miau</title>
+    <link rel="stylesheet" href="./servico.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/logo.png" alt="Logo Au&Miau">
+        </div>
+        <div class="company-name">Au&Miau</div>
+        <div class="reserve-button">
+            <button id="reserve-button">Reserve Seu Agendamento</button>
+        </div>
+    </header>
+    <main>
+        <h1>Selecione o Serviço</h1>
+        <div class="selection-container">
+            <div class="service-selection">
+                <label class="service-option">
+                    <input type="checkbox" id="banho-simples" name="service" value="banho-simples">
+                    <div class="service-box">
+                        <span>Banho Simples</span>
+                        <img src="./img/banho1.png" alt="Banho Simples">
+                        <div class="service-details">
+                            <div>Duração: 30min</div>
+                            <div>Valor: R$ 50</div>
+                        </div>
+                    </div>
+                </label>
+                <label class="service-option">
+                    <input type="checkbox" id="banho-premium" name="service" value="banho-premium">
+                    <div class="service-box">
+                        <span>Banho Premium</span>
+                        <img src="./img/banho2.png" alt="Banho Premium">
+                        <div class="service-details">
+                            <div>Duração: 45min</div>
+                            <div>Valor: R$ 80</div>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <h2>Vamos tosar o seu amiguinho?</h2>
+            <div class="service-selection">
+                <label class="service-option">
+                    <input type="checkbox" id="tosa-tesoura" name="service" value="tosa-tesoura">
+                    <div class="service-box">
+                        <span>Tosa na Tesoura</span>
+                        <img src="./img/tesoura.png" alt="Tosa na Tesoura">
+                        <div class="service-details">
+                            <div>Duração: 30min</div>
+                            <div>Valor: R$ 70</div>
+                        </div>
+                    </div>
+                </label>
+                <label class="service-option">
+                    <input type="checkbox" id="tosa-maquina" name="service" value="tosa-maquina">
+                    <div class="service-box">
+                        <span>Tosa na Máquina</span>
+                        <img src="./img/maquina-de-cortar-cabelo.png" alt="Tosa na Máquina">
+                        <div class="service-details">
+                            <div>Duração: 20min</div>
+                            <div>Valor: R$ 60</div>
+                        </div>
+                    </div>
+                </label>
+                <label class="service-option">
+                    <input type="checkbox" id="tosa-higienica" name="service" value="tosa-higienica">
+                    <div class="service-box">
+                        <span>Tosa Higiênica</span>
+                        <img src="./img/cachorroTesoura.png" alt="Tosa Higiênica">
+                        <div class="service-details">
+                            <div>Duração: 10min</div>
+                            <div>Valor: R$ 40</div>
+                        </div>
+                    </div>
+                </label>
+            </div>
+
+            <h2>Serviços Adicionais</h2>
+            <div class="additional-services">
+                <label class="additional-service-option">
+                    <input type="checkbox" name="additional-service" value="corte-unhas">
+                    <div class="additional-service-box">
+                        Corte de Unhas
+                        <span class="service-details">R$ 15 | 15min</span>
+                    </div>
+                </label>
+                <label class="additional-service-option">
+                    <input type="checkbox" name="additional-service" value="escovacao-dentes">
+                    <div class="additional-service-box">
+                        Escovação de Dentes
+                        <span class="service-details">R$ 30 | 30min</span>
+                    </div>
+                </label>
+                <label class="additional-service-option">
+                    <input type="checkbox" name="additional-service" value="tesoura-rosto">
+                    <div class="additional-service-box">
+                        Tesoura p/ Rosto
+                        <span class="service-details">R$ 15 | 15min</span>
+                    </div>
+                </label>
+                <label class="additional-service-option">
+                    <input type="checkbox" name="additional-service" value="hidratacao">
+                    <div class="additional-service-box">
+                        Hidratação
+                        <span class="service-details">R$ 20 | 15min</span>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button class="action-button back-button"><a href="./selecionarPet.html" style="text-decoration: none; color: white;">Voltar</a></button>
+            <button id="continue-button" class="action-button continue-button">Continuar</button>
+
+        </div>
+    </main>
+    <script src="servico.js"></script>
+</body>
+</html>

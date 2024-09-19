@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento - Au&Miau</title>
+    <link rel="stylesheet" href="agendamento.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/logo.png" alt="Logo Au&Miau">
+        </div>
+        <div class="company-name">Au&Miau</div>
+    </header>
+    <main>
+        <h1>Agendamento</h1>
+        <div class="calendar-container">
+            <div class="calendar">
+                <div class="calendar-controls">
+                    <button id="prev-month" class="control-button">&lt;</button>
+                    <div id="month-year" class="month-year"></div>
+                    <button id="next-month" class="control-button">&gt;</button>
+                </div>
+                <div id="calendar-grid" class="calendar-grid"></div>
+            </div>
+            <div id="available-times" class="available-times">
+                <h2>Horários Disponíveis</h2>
+                <div id="times-container" class="times-container"></div>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button class="action-button back-button"><a href="./unidade.html" style="text-decoration: none; color: white;">Voltar</a></button>
+            <button class="action-button continue-button"><a href="./agendamento.html" style="text-decoration: none; color: white;">Continuar</a></button>
+        </div>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let monthOffset = 0; // Inicialização correta do monthOffset
+            const today = new Date();
+            today.setHours(0, 0, 0, 0); // Resetar as horas para comparar apenas datas
+            
+            function generateCalendar(monthOffset) {
+                const firstDay = new Date();
+                firstDay.setMonth(firstDay.getMonth() + monthOffset);
+                firstDay.setDate(1);
+
+                const lastDay = new Date(firstDay);
+                lastDay.setMonth(firstDay.getMonth() + 1);
+                lastDay.setDate(0);
+
+                const calendarGrid = document.getElementById("calendar-grid");
+                calendarGrid.innerHTML = "";
+
+                // Adicionar células vazias para preencher os dias antes do primeiro
+                for (let i = 0; i < firstDay.getDay(); i++) {
+                    calendarGrid.innerHTML += `<div class="calendar-cell"></div>`;
+                }
+                // Adicionar os dias do mês
+                for (let i = 1; i <= lastDay.getDate(); i++) {
+                    const currentDay = new Date(firstDay);
+                    currentDay.setDate(i);
+                    const isPast = currentDay < today;
+                    const isSelected = selectedDate && currentDay.toDateString() === selectedDate.toDateString();
+                    calendarGrid.innerHTML += `
+                        <div class="calendar-cell ${isPast ? 'past-day' : ''} ${isSelected ? 'selected-day' : ''}" 
+                            data-date="${currentDay.toDateString()}" 
+                            ${isPast ? 'style="pointer-events: none;"' : ''}>
+                            ${i}
+                        </div>
+                    `;
+                }
+                const monthYearDisplay = document.getElementById("month-year");
+                monthYearDisplay.innerText = `${firstDay.toLocaleString('default', { month: 'long' })} ${firstDay.getFullYear()}`;
+            }
+
+            function generateTimes() {
+                const times = ["09:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00", "17:00"];
+                const timesContainer = document.getElementById("times-container");
+                timesContainer.innerHTML = times.map(time => `
+                    <div class="time-slot" data-time="${time}">${time}</div>
+                `).join('');
+            }
+
+            document.getElementById("prev-month").addEventListener("click", function() {
+                monthOffset--;
+                generateCalendar(monthOffset);
+            });
+
+            document.getElementById("next-month").addEventListener("click", function() {
+                monthOffset++;
+                generateCalendar(monthOffset);
+            });
+
+            const calendarGrid = document.getElementById("calendar-grid");
+            let selectedDate = null;
+
+            calendarGrid.addEventListener("click", function(e) {
+                if (e.target.classList.contains("calendar-cell") && !e.target.classList.contains("past-day")) {
+                    document.querySelectorAll(".calendar-cell").forEach(cell => cell.classList.remove("selected-day"));
+                    e.target.classList.add("selected-day");
+                    selectedDate = new Date(e.target.dataset.date);
+                    generateTimes();
+                }
+            });
+
+            const timesContainer = document.getElementById("times-container");
+            let selectedTime = null;
+
+            timesContainer.addEventListener("click", function(e) {
+                if (e.target.classList.contains("time-slot")) {
+                    document.querySelectorAll(".time-slot").forEach(slot => slot.classList.remove("selected-time"));
+                    e.target.classList.add("selected-time");
+                    selectedTime = e.target.dataset.time;
+                }
+            });
+
+            function saveSelection() {
+                const selection = {
+                    date: selectedDate ? selectedDate.toDateString() : null,
+                    time: selectedTime
+                };
+                localStorage.setItem('appointmentSelection', JSON.stringify(selection));
+            }
+
+            document.querySelector('.continue-button').addEventListener('click', (event) => {
+                event.preventDefault(); // Prevenir o comportamento padrão do link
+                saveSelection(); // Salvar a seleção
+                alert('As informações foram salvas.'); // Exibir alerta
+
+                // Redirecionar após o alerta
+                setTimeout(() => {
+                    window.location.href = './confirmacao.html'; // Redirecionar para a nova página
+                }, 500); // Atraso para garantir que o alerta seja exibido
+            });
+
+            generateCalendar(monthOffset);
+        });
+    </script>
+</body>
+</html>

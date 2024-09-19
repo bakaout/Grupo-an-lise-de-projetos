@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Au&Miau</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/logo.png" alt="Logo Au&Miau"> <!-- Substitua 'logo.png' pela URL da sua imagem -->
+        </div>
+        <div class="company-name">Au&Miau</div>
+    </header>
+    <main>
+        <h1>Login</h1>
+        <form id="login-form" class="login-form"> <!-- Adiciona o ID correto -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+            
+            <button type="submit" class="login-button">Entrar</button>
+        </form>
+        <div class="register-link">
+            <a href="./cadastroTutor.html">Não tem uma conta? Cadastre-se aqui.</a>
+        </div>
+        <div id="login-error" style="display: none; color: red;"></div> <!-- Adicionado para exibir mensagens de erro -->
+    </main>
+    <script src="login.js"></script>
+</body>
+</html>

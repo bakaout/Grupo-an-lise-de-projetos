@@ -1,0 +1,204 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #F4FBFA;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #F4FBFA;
+    border-bottom: 2px solid #ccc;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.company-name {
+    font-size: 40px;
+    font-weight: bold;
+    color: #000;
+    margin-left: 15px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    flex: 1;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.calendar-container {
+    display: flex;
+    gap: 20px;
+}
+
+.calendar, .available-times {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    width: 400px; /* Define a mesma largura para ambos */
+}
+
+.calendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendar-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.control-button {
+    background-color: #007F6D;
+    color: white;
+    border: none;
+    padding: 3px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.control-button:hover {
+    background-color: #005b4f;
+}
+
+.month-year {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    width: 100%;
+}
+
+.calendar-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff; /* Cor de fundo padrão */
+    transition: background-color 0.3s ease;
+}
+
+.calendar-cell.selected-day {
+    background-color: #007F6D;
+    color: white;
+    border-radius: 5px;
+}
+
+.calendar-cell.past-day {
+    color: #999;
+    position: relative;
+    background-color: #e0e0e0; /* Cor de fundo mais clara */
+}
+
+.calendar-cell.past-day::before {
+    content: '';
+    background-image: url('./img/blocked-icon.png'); /* Caminho da imagem de bloqueio */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 24px; /* Ajuste o tamanho da imagem conforme necessário */
+    height: 24px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.available-times {
+    max-width: 400px; /* Certifique-se de que tenha a mesma largura que o calendário */
+}
+
+.times-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.time-slot {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.time-slot:hover {
+    background-color: #f0f0f0;
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px; /* Espaço entre os botões */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.action-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-button {
+    background-color: #ccc; /* Cor do botão de voltar */
+}
+
+.back-button:hover {
+    background-color: #aaa; /* Cor do hover do botão de voltar */
+}
+
+.continue-button {
+    background-color: #007F6D; /* Cor do botão de continuar */
+}
+
+.continue-button:hover {
+    background-color: #005b4f; /* Cor do hover do botão de continuar */
+}
+
+.time-slot.selected-time {
+    background-color: #007F6D;
+    color: white;
+    border: 1px solid #007F6D;
+}
+

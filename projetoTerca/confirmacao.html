@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão do Serviço - Au&Miau</title>
+    <link rel="stylesheet" href="confirmacao.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./img/logo.png" alt="Logo Au&Miau">
+        </div>
+        <div class="company-name">Au&Miau</div>
+    </header>
+    <main>
+        <h1>Revisão do Serviço</h1>
+        <div class="review-container">
+            <div class="review-item">
+                <h2>Informações do Pet</h2>
+                <p><strong>Nome do Pet:</strong> <span id="pet-name">Carregando...</span></p>
+                <p><strong>Nome do Tutor:</strong> <span id="tutor-name">Carregando...</span></p>
+            </div>
+            <div class="review-item">
+                <h2>Detalhes do Serviço</h2>
+                <p><strong>Tipo de Banho:</strong> <span id="bath-type">Carregando...</span></p>
+                <p><strong>Tipo de Tosa:</strong> <span id="grooming-type">Carregando...</span></p>
+                <p><strong>Serviços Adicionais:</strong> <span id="additional-services">Carregando...</span></p>
+            </div>
+            <div class="review-item">
+                <h2>Detalhes do Agendamento</h2>
+                <p><strong>Unidade:</strong> <span id="unit-name">Carregando...</span></p>
+                <p><strong>Data:</strong> <span id="appointment-date">Carregando...</span></p>
+                <p><strong>Horário:</strong> <span id="appointment-time">Carregando...</span></p>
+            </div>
+        </div>
+        <div class="form-actions">
+            <button class="action-button back-button"><a href="./unidade.html" style="text-decoration: none; color: white;">Voltar</a></button>
+            <button class="action-button confirm-button"><a href="./confirmacao.html" style="text-decoration: none; color: white;">Confirmar</a></button>
+        </div>
+    </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const selection = JSON.parse(localStorage.getItem('appointmentSelection')) || {};
+            const petInfo = JSON.parse(localStorage.getItem('petInfo')) || {};
+            const userInfo = JSON.parse(localStorage.getItem('userInfo')) || {};
+
+            // Preencher os campos com os dados salvos
+            document.getElementById('pet-name').innerText = petInfo.name || 'Não especificado';
+            document.getElementById('tutor-name').innerText = userInfo.name || 'Não especificado';
+            document.getElementById('bath-type').innerText = petInfo.bathType || 'Não especificado';
+            document.getElementById('grooming-type').innerText = petInfo.groomingType || 'Não especificado';
+            document.getElementById('additional-services').innerText = petInfo.additionalServices || 'Não especificado';
+            document.getElementById('unit-name').innerText = selection.unit || 'Não especificado';
+            document.getElementById('appointment-date').innerText = selection.date || 'Não especificado';
+            document.getElementById('appointment-time').innerText = selection.time || 'Não especificado';
+        });
+    </script>
+</body>
+</html>

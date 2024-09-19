@@ -1,0 +1,160 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #F4FBFA; /* Cor de fundo da tela */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #F4FBFA; /* Cor de fundo do header */
+    border-bottom: 2px solid #ccc;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px; /* Ajuste conforme necessário */
+}
+
+.company-name {
+    font-size: 40px; /* Tamanho do título da empresa */
+    font-weight: bold; /* Texto em negrito */
+    color: #000; /* Cor preta */
+    margin-left: 15px; /* Espaço entre a logo e o título */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    flex: 1;
+    text-align: center; /* Adiciona centralização do texto */
+}
+
+h1 {
+    font-size: 24px; /* Tamanho do título */
+    color: #000; /* Cor preta */
+    margin-bottom: 20px;
+}
+
+.unit-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre as unidades */
+    width: 100%;
+    max-width: 600px; /* Largura máxima das unidades */
+}
+
+.unit-option {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+    position: relative; /* Para posicionar o checkbox customizado */
+}
+
+.unit-option input[type="checkbox"] {
+    display: none; /* Oculta o checkbox original */
+}
+
+.unit-option input[type="checkbox"] + .unit-box {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    padding: 10px;
+    width: 100%;
+    max-width: 800px; /* Largura máxima das unidades */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Adiciona transição para a cor do texto */
+    text-align: left; /* Alinha o texto à esquerda */
+    position: relative;
+}
+
+.unit-option input[type="checkbox"]:checked + .unit-box {
+    background-color: #007F6D; /* Cor de fundo quando selecionado */
+    color: #fff; /* Cor do texto quando selecionado */
+    border-color: #005b4f; /* Borda mais escura quando selecionado */
+}
+
+.unit-box img {
+    width: 200px; /* Tamanho consistente da imagem */
+    height: 150px; /* Altura consistente da imagem */
+    object-fit: cover; /* Mantém a proporção da imagem */
+    margin-right: 20px; /* Espaço entre a imagem e os detalhes */
+}
+
+.unit-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza o texto verticalmente */
+    align-items: flex-start; /* Alinha o texto à esquerda dentro da caixa */
+}
+
+.unit-name, .unit-address, .unit-cep, .unit-city, .unit-neighborhood {
+    font-size: 18px; /* Fonte maior */
+    color: inherit; /* Usa a cor do pai (aqui, a cor será branca quando selecionado) */
+    margin-bottom: 5px; /* Espaço entre linhas */
+}
+
+.unit-option input[type="checkbox"]:checked + .unit-box::before {
+    content: '';
+    position: absolute;
+    width: 16px; /* Tamanho reduzido do checkbox */
+    height: 16px; /* Tamanho reduzido do checkbox */
+    border-radius: 3px; /* Arredondamento das bordas do checkbox */
+    border: 2px solid #007F6D; /* Cor da borda do checkbox */
+    background-color: #007F6D; /* Cor de fundo quando selecionado */
+    top: 10px; /* Ajuste da posição do checkbox */
+    left: 10px; /* Ajuste da posição do checkbox */
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px; /* Espaço entre os botões */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.action-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-button {
+    background-color: #ccc; /* Cor do botão de voltar */
+}
+
+.back-button:hover {
+    background-color: #aaa; /* Cor do hover do botão de voltar */
+}
+
+.continue-button {
+    background-color: #007F6D; /* Cor do botão de continuar */
+}
+
+.continue-button:hover {
+    background-color: #005b4f; /* Cor do hover do botão de continuar */
+}

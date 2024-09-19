@@ -1,0 +1,212 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #F4FBFA; /* Cor de fundo da tela */
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #F4FBFA; /* Cor de fundo do header */
+    border-bottom: 2px solid #ccc;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px; /* Ajuste conforme necessário */
+}
+
+.company-name {
+    font-size: 40px; /* Tamanho do título da empresa */
+    font-weight: bold; /* Texto em negrito */
+    color: #000; /* Cor preta */
+    margin-left: 15px; /* Espaço entre a logo e o título */
+}
+
+.reserve-button {
+    margin-left: auto; /* Move o botão para a direita */
+}
+
+.reserve-button button {
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007F6D; /* Cor dos botões */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reserve-button button:hover {
+    background-color: #005b4f; /* Cor do hover dos botões */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    flex: 1;
+    text-align: center; /* Adiciona centralização do texto */
+}
+
+h1 {
+    font-size: 24px; /* Tamanho do título */
+    color: #000; /* Cor preta */
+    margin-bottom: 20px;
+}
+
+.selection-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.pet-selection {
+    display: flex;
+    gap: 15px; /* Espaço entre os quadrados */
+    margin-bottom: 20px; /* Espaço abaixo dos quadrados */
+}
+
+.pet-option {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.pet-option input[type="checkbox"] {
+    display: none;
+}
+
+.pet-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 15px;
+    flex-direction: column;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.pet-option input[type="checkbox"]:checked + .pet-box {
+    background-color: #007F6D; /* Cor de fundo quando selecionado */
+    color: #fff;
+    border-color: #005b4f; /* Borda mais escura quando selecionado */
+}
+
+.pet-box img {
+    width: 50px; /* Tamanho do ícone */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.pet-box span {
+    font-size: 18px;
+}
+
+.pet-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px; /* Largura máxima do formulário */
+    gap: 15px; /* Espaço entre os campos do formulário */
+    text-align: left; /* Alinha os rótulos e os campos do formulário à esquerda */
+    margin-bottom: 20px; /* Espaço abaixo do formulário */
+}
+
+.pet-form label {
+    font-size: 16px;
+    color: #000; /* Cor preta */
+}
+
+.pet-form input, .pet-form select, .pet-form textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.pet-form textarea {
+    resize: vertical; /* Permite redimensionar apenas verticalmente */
+}
+
+.form-row {
+    display: flex;
+    gap: 15px; /* Espaço entre os grupos de formulário */
+}
+
+.form-group {
+    flex: 1; /* Cada grupo ocupa uma parte igual da linha */
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px; /* Espaço entre os botões */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.action-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-button {
+    background-color: #ccc; /* Cor do botão de voltar */
+}
+
+.back-button:hover {
+    background-color: #aaa; /* Cor do hover do botão de voltar */
+}
+
+.continue-button {
+    background-color: #007F6D; /* Cor do botão de continuar */
+}
+
+.continue-button:hover {
+    background-color: #005b4f; /* Cor do hover do botão de continuar */
+}
+
+/* Adicionando estilos para o botão de enviar */
+.submit-button {
+    padding: 12px 24px; /* Espaçamento interno do botão */
+    font-size: 16px; /* Tamanho da fonte */
+    color: #fff; /* Cor do texto */
+    background-color: #007F6D; /* Cor de fundo do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 8px; /* Borda arredondada */
+    cursor: pointer; /* Cursor de ponteiro ao passar sobre o botão */
+    margin-top: 20px; /* Espaçamento superior do botão */
+}
+
+.submit-button:hover {
+    background-color: #005b4f; /* Cor de fundo ao passar o mouse */
+}
+
+
+
